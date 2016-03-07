@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class LogicGates {
 
-  public static ArrayList<LogicGates> gateList = new ArrayList<LogicGates>();
+  public static final ArrayList<LogicGates> gateList = new ArrayList<LogicGates>();
 
   public LogicGates() {
     gateList.add(this);
