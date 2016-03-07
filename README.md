@@ -1,2 +1,2 @@
 # Raww
-Hard logic scripting language, in development
+Boolean logic scripting language, in development
