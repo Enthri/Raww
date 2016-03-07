@@ -6,4 +6,9 @@ public class Comment extends LogicGates {
   public String getCommand() {
     return "#";
   }
+
+  @Override
+  public boolean hasParam() {
+    return false;
+  }
 }

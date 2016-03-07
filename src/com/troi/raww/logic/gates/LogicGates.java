@@ -11,6 +11,7 @@ public abstract class LogicGates {
   }
 
   public abstract String getCommand();
+  public abstract boolean hasParam();
 
   public static final LogicGates comment = new Comment();
 }
