@@ -12,7 +12,8 @@ public class Raww implements Runnable {
   @Override
   public void run() {
     this.fileHandler = new FileHandler();
-    System.out.println("Hello World");
+    this.fileHandler.readFiles("test.raww");
+    System.out.println(fileHandler.getFileList().get(0).getLines().get(0));
   }
 
   public static void main(String[] args) {
