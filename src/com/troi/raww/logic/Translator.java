@@ -9,6 +9,7 @@ public class Translator {
 
   public static GateMask translateLine(String str) {
     String[] split = str.split("\"?( |$)(?=(([^\"]*\"){2})*[^\"]*$)\"?");
+    if(split.length < 1) return null;
     for(LogicGates gate : LogicGates.gateList) {
       if(gate.getCommand().equals(split[0].toLowerCase())) {
         if(gate.hasParam()) return new GateMask(gate, Arrays.copyOfRange(split, 1, split.length));
