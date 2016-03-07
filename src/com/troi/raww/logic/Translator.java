@@ -7,10 +7,8 @@ import java.util.ArrayList;
 public class Translator {
 
   public static GateMask translateLine(String str) {
-    String[] split = str.split(" ");
-    for(LogicGates gate : LogicGates.gateList) {
-      if(gate.getCommand().equals(split[0].toLowerCase())) return new GateMask(gate);
-    }
+    String[] split = str.split("\"?( |$)(?=(([^\"]*\"){2})*[^\"]*$)\"?");
+    for(LogicGates gate : LogicGates.gateList) if(gate.getCommand().equals(split[0].toLowerCase())) return new GateMask(gate);
     return null;
   }
 }
