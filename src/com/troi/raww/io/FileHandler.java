@@ -18,7 +18,7 @@ public class FileHandler {
     BufferedReader read = null;
     for(String fileName : fileNames) {
       File file = new File(fileName);
-      if(!file.exists() || !fileName.contains(".raww")) continue;
+      if(!file.exists() || !fileName.toLowerCase().contains(".raww")) continue;
       RawwFile rawwFile = new RawwFile(fileName);
       try {
         read = new BufferedReader(new FileReader(file));
