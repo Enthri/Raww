@@ -1,2 +1,4 @@
 # Everything past here is ignored :)
-xor test 0 0
+# test
+#test
+xor A B C

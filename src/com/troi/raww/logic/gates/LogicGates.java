@@ -14,4 +14,5 @@ public abstract class LogicGates {
   public abstract boolean hasParam();
 
   public static final LogicGates comment = new Comment();
+  public static final LogicGates xorGate = new XorGate();
 }
