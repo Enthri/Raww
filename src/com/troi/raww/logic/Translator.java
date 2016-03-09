@@ -12,7 +12,12 @@ public class Translator {
     if(split.length < 1) return null;
     for(LogicGates gate : LogicGates.gateList) {
       if(gate.getCommand().equals(split[0].toLowerCase()) || (gate.containParam() && gate.getCommand().equals(split[0].toLowerCase().substring(0, gate.getCommand().length())))) {
-        if(gate.hasParam()) return new GateMask(gate, Arrays.copyOfRange(split, 1, split.length));
+        if(gate.hasParam() && !gate.containParam()) return new GateMask(gate, Arrays.copyOfRange(split, 1, split.length));
+        else if(gate.hasParam() && gate.containParam()) {
+          split[0] = split[0].substring(gate.getCommand().length());
+          if(split[0].length() > 0) return new GateMask(gate, split);
+          else new GateMask(gate, Arrays.copyOfRange(split, 1, split.length));
+        }
         else return new GateMask(gate);
       }
     }
