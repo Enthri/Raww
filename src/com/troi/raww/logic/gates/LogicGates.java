@@ -10,9 +10,13 @@ public abstract class LogicGates {
     gateList.add(this);
   }
 
+  public boolean containParam() {
+    return false;
+  }
+
   public abstract String getCommand();
   public abstract boolean hasParam();
 
-  public static final LogicGates comment = new Comment();
-  public static final LogicGates xorGate = new XorGate();
+  public static final LogicGates comment = new Comment(); //no parameters
+  public static final LogicGates xorGate = new XorGate(); //PARAM;: I: A, B; O: C
 }

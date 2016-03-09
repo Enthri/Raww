@@ -11,4 +11,9 @@ public class Comment extends LogicGates {
   public boolean hasParam() {
     return false;
   }
+
+  @Override
+  public boolean containParam() {
+    return true;
+  }
 }
