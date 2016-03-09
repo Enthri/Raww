@@ -16,9 +16,14 @@ public class LogicHandler {
 
   public void run() {
     for(RawwFile file : files) {
-      for(String line : file.getLines()) {
+      for(int i = 0; i < file.getLines().size(); i++) {
+        String line = file.getLines().get(i);
         GateMask mask = Translator.translateLine(line);
         if(mask != null) gates.add(mask);
+        else {
+          System.out.println("Syntax error on line " + (i + 1));
+          return;
+        }
       }
     }
     for(GateMask mask : gates) {
