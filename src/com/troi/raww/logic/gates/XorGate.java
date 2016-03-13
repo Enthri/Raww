@@ -8,7 +8,7 @@ public class XorGate extends LogicGates {
   }
 
   @Override
-  public boolean hasParam() {
-    return true;
+  public byte paramType() {
+    return LogicGates.PARAM_TRUE;
   }
 }

@@ -8,12 +8,7 @@ public class Comment extends LogicGates {
   }
 
   @Override
-  public boolean hasParam() {
-    return false;
-  }
-
-  @Override
-  public boolean containParam() {
-    return true;
+  public byte paramType() {
+    return LogicGates.PARAM_CONTAIN_F;
   }
 }
