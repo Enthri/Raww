@@ -1,5 +1,6 @@
 package com.troi.raww.logic;
 
+import com.troi.raww.error.ErrorHandler;
 import com.troi.raww.io.RawwFile;
 import com.troi.raww.logic.gates.GateMask;
 import java.util.ArrayList;
@@ -20,10 +21,7 @@ public class LogicHandler {
         String line = file.getLines().get(i);
         GateMask mask = Translator.translateLine(line);
         if(mask != null) gates.add(mask);
-        else {
-          System.out.println("Syntax error on line " + (i + 1));
-          return;
-        }
+        else ErrorHandler.printError("Syntax error on line " + (i + 1));
       }
     }
     for(GateMask mask : gates) {
