@@ -23,14 +23,24 @@ public class GatePath {
     sources.add(new GateSource(mask));
   }
 
+  public void setState(GateMask mask, boolean state) {
+    boolean newState = false;
+    for(GateSource source : sources) {
+      if(source.getSource() == mask && source.currentState() != state) source.setState(state);
+      newState = newState && source.currentState();
+    }
+    if(newState != this.state) {
+      for(GateSource source : sources) {
+        source.getSource().getGate().update(this, source.getSource());
+      }
+    }
+  }
+
   public boolean currentState() {
     return this.state;
   }
 
-  public void setState(GateMask mask, boolean state) {
-    boolean prevState = state;
-    for(GateSource source : sources) {
-      source.currentState()
-    }
+  public String getName() {
+    return this.name;
   }
 }
