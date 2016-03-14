@@ -10,6 +10,7 @@ public class XorGate extends LogicGates {
 
   @Override
   public void onCreation(GateMask gate) {
+    System.out.println(this.getCommand());
   }
 
   @Override

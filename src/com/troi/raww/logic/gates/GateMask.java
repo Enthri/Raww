@@ -16,6 +16,7 @@ public class GateMask {
     this.logicInstance = instance;
     this.gate = gate;
     this.param = param;
+    this.gate.onCreation(this);
   }
 
   public LogicGates getGate() {
