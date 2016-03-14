@@ -10,6 +10,7 @@ public class LogicHandler {
 
   private ArrayList<RawwFile> files;
   private ArrayList<GateMask> gates;
+  private ArrayList<GatePath> paths;
 
   public LogicHandler(ArrayList<RawwFile> files) {
     this.files = files;
@@ -25,5 +26,18 @@ public class LogicHandler {
         else ErrorHandler.printError("Syntax error on line " + (i + 1));
       }
     }
+  }
+
+  public GatePath createGatePath(String name) {
+    GatePath path = new GatePath(name);
+    paths.add(path);
+    return path;
+  }
+
+  public GatePath getGatePath(String name) {
+    for(GatePath path : paths) {
+      if(path.getName().equals(name)) return path;
+    }
+    return null;
   }
 }
