@@ -4,7 +4,6 @@ public class XorGate extends LogicGates {
 
   @Override
   public void update(GatePath path, GateMask gate) {
-
   }
 
   @Override

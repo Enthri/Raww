@@ -3,6 +3,7 @@ package com.troi.raww.logic;
 import com.troi.raww.error.ErrorHandler;
 import com.troi.raww.io.RawwFile;
 import com.troi.raww.logic.gates.GateMask;
+import com.troi.raww.logic.gates.GatePath;
 import java.util.ArrayList;
 
 public class LogicHandler {
@@ -23,9 +24,6 @@ public class LogicHandler {
         if(mask != null) gates.add(mask);
         else ErrorHandler.printError("Syntax error on line " + (i + 1));
       }
-    }
-    for(GateMask mask : gates) {
-      System.out.println(mask.getGate().getCommand());
     }
   }
 }

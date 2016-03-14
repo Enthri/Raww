@@ -27,9 +27,10 @@ public class GatePath {
     boolean newState = false;
     for(GateSource source : sources) {
       if(source.getSource() == mask && source.currentState() != state) source.setState(state);
-      newState = newState && source.currentState();
+      newState = newState || source.currentState();
     }
     if(newState != this.state) {
+      this.state = newState;
       for(GateSource source : sources) {
         source.getSource().getGate().update(this, source.getSource());
       }
