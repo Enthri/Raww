@@ -21,5 +21,6 @@ public abstract class LogicGates {
   public abstract byte paramType();
 
   public static final LogicGates comment = new Comment(); //no parameters
-  public static final LogicGates xorGate = new XorGate(); //PARAM;: I: A, B; O: C
+  public static final LogicGates pathVariable = new PathVariable(); //$variable
+  public static final LogicGates xorGate = new XorGate(); //xor A B C ..
 }

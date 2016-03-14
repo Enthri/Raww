@@ -8,6 +8,8 @@ public class GateMask {
   private LogicGates gate;
   private String[] param;
 
+  private int line;
+
   public GateMask(LogicGates gate, LogicHandler instance) {
     this(gate, null, instance);
   }
@@ -16,7 +18,10 @@ public class GateMask {
     this.logicInstance = instance;
     this.gate = gate;
     this.param = param;
-    this.gate.onCreation(this);
+  }
+
+  public void setLine(int line) {
+    this.line = line;
   }
 
   public LogicGates getGate() {
@@ -25,5 +30,13 @@ public class GateMask {
 
   public LogicHandler getLogicInstance() {
     return this.logicInstance;
+  }
+
+  public String[] getParameters() {
+    return this.param;
+  }
+
+  public int line() {
+    return this.line;
   }
 }

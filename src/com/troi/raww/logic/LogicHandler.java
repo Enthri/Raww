@@ -15,6 +15,7 @@ public class LogicHandler {
   public LogicHandler(ArrayList<RawwFile> files) {
     this.files = files;
     this.gates = new ArrayList<GateMask>();
+    this.paths = new ArrayList<GatePath>();
   }
 
   public void run() {
@@ -22,7 +23,11 @@ public class LogicHandler {
       for(int i = 0; i < file.getLines().size(); i++) {
         String line = file.getLines().get(i);
         GateMask mask = Translator.translateLine(line, this);
-        if(mask != null) gates.add(mask);
+        if(mask != null) {
+          mask.setLine(i + 1);
+          mask.getGate().onCreation(mask);
+          gates.add(mask);
+        }
         else ErrorHandler.printError("Syntax error on line " + (i + 1));
       }
     }
