@@ -1,9 +1,15 @@
 package com.troi.raww.logic.gates;
 
+import com.troi.raww.logic.LogicHandler;
+
 public class XorGate extends LogicGates {
 
   @Override
   public void update(GatePath path, GateMask gate) {
+  }
+
+  @Override
+  public void onCreation(GateMask gate) {
   }
 
   @Override

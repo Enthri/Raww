@@ -21,7 +21,7 @@ public class LogicHandler {
     for(RawwFile file : files) {
       for(int i = 0; i < file.getLines().size(); i++) {
         String line = file.getLines().get(i);
-        GateMask mask = Translator.translateLine(line);
+        GateMask mask = Translator.translateLine(line, this);
         if(mask != null) gates.add(mask);
         else ErrorHandler.printError("Syntax error on line " + (i + 1));
       }
