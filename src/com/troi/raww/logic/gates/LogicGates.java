@@ -15,6 +15,7 @@ public abstract class LogicGates {
     gateList.add(this);
   }
 
+  //public abstract void update();
   public abstract String getCommand();
   public abstract byte paramType();
 
