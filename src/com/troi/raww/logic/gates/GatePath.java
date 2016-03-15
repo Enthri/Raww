@@ -21,6 +21,7 @@ public class GatePath {
 
   public void addSource(GateMask mask) {
     sources.add(new GateSource(mask));
+    if(this.state) mask.getGate().update(this, mask);
   }
 
   public void setState(GateMask mask, boolean state) {
