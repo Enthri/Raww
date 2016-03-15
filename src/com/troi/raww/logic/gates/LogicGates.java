@@ -22,5 +22,6 @@ public abstract class LogicGates {
 
   public static final LogicGates comment = new Comment(); //no parameters
   public static final LogicGates pathVariable = new PathVariable(); //$variable
+  public static final EternalSource eternalSource = new EternalSource(); //$variable
   public static final LogicGates xorGate = new XorGate(); //xor A B C ..
 }

@@ -3,32 +3,32 @@ package com.troi.raww.logic.gates;
 import com.troi.raww.logic.LogicHandler;
 import com.troi.raww.error.ErrorHandler;
 
-public class XorGate extends LogicGates {
+public class EternalSource extends LogicGates {
 
   @Override
   public void update(GatePath path, GateMask gate) {
-    LogicHandler logic = gate.getLogicInstance();
-    System.out.println("TEST");
   }
 
   @Override
   public void onCreation(GateMask gate) {
     String[] param = gate.getParameters();
-    if(param.length != 3) ErrorHandler.printError("Invalid parameters for XOR gate on line " + gate.line());
+    if(param.length < 1 || param.length > 5) ErrorHandler.printError("Invalid parameters for path on line " + gate.line());
     for(String p : param) {
       GatePath path = gate.getLogicInstance().getGatePath(p);
-      if(path != null) path.addSource(gate);
-      else ErrorHandler.printError("Cannot find path " + p + " for line " + gate.line());
+      if(path != null) {
+        path.addSource(gate);
+        path.setState(gate, true);
+      } else ErrorHandler.printError("Cannot find path " + p + " for line " + gate.line());
     }
   }
 
   @Override
   public String getCommand() {
-    return "xor";
+    return "!";
   }
 
   @Override
   public byte paramType() {
-    return LogicGates.PARAM_TRUE;
+    return LogicGates.PARAM_CONTAIN;
   }
 }

@@ -1,6 +1,7 @@
 # Experimental Program #
 # Raww by Troi-Ryan S  #
-$A
-$B
-$C
-xor A B C
+$a
+$b
+$c
+xor a b c
+!a
