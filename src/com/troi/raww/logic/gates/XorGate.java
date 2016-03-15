@@ -7,8 +7,11 @@ public class XorGate extends LogicGates {
 
   @Override
   public void update(GatePath path, GateMask gate) {
+    String[] param = gate.getParameters();
     LogicHandler logic = gate.getLogicInstance();
-    System.out.println("TEST");
+    if(!path.getName().equals(param[2])) {
+      
+    }
   }
 
   @Override

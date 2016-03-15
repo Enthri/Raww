@@ -3,5 +3,4 @@
 $a
 $b
 $c
-xor a b c
-!a
+print "test test" a b c
