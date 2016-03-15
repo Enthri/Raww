@@ -13,7 +13,6 @@ public class PathVariable extends LogicGates {
   public void onCreation(GateMask gate) {
     String[] param = gate.getParameters();
     if(param.length < 1 || param.length > 1) ErrorHandler.printError("Invalid parameters for path on line " + gate.line());
-    System.out.println(param[0]);
     gate.getLogicInstance().createGatePath(param[0]);
   }
 

@@ -24,9 +24,9 @@ public class LogicHandler {
         String line = file.getLines().get(i);
         GateMask mask = Translator.translateLine(line, this);
         if(mask != null) {
+          gates.add(mask);
           mask.setLine(i + 1);
           mask.getGate().onCreation(mask);
-          gates.add(mask);
         }
         else ErrorHandler.printError("Syntax error on line " + (i + 1));
       }
