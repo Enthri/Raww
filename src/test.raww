@@ -4,3 +4,4 @@ $a
 $b
 $c
 print "test test" a b c
+!a
