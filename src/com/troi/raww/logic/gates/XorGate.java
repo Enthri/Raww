@@ -9,8 +9,9 @@ public class XorGate extends LogicGates {
   public void update(GatePath path, GateMask gate) {
     String[] param = gate.getParameters();
     LogicHandler logic = gate.getLogicInstance();
-    if(!path.getName().equals(param[2])) {
-      
+    System.out.println(path.getName() + " " + param[2]);
+    if(path.getName().equals(param[2])) {
+      System.out.println("test");
     }
   }
 

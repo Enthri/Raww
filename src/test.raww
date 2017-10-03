@@ -1,7 +1,5 @@
 # Experimental Program #
 # Raww by Troi-Ryan S  #
-$a
-$b
-$c
-print "test test" a b c
+$a;$b;$c
+xor a b c
 !a

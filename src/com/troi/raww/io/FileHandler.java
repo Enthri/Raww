@@ -23,7 +23,9 @@ public class FileHandler {
       try {
         read = new BufferedReader(new FileReader(file));
         String line;
-        while((line = read.readLine()) != null) rawwFile.addLine(line);
+        while((line = read.readLine()) != null) {
+          for(String lineOpt : line.split(";")) rawwFile.addLine(lineOpt.trim());
+        }
       } catch(Exception e) {
       } finally {
         try { if(read != null) read.close();
